@@ -5,14 +5,14 @@ variable "cluster_name" {
 }
 
 variable "kubernetes_version" {
-  type = string
-  default = "1.32"
+  type        = string
+  default     = "1.32"
   description = "Kubernetes version"
 }
 
 variable "karpenter_version" {
-  type = string
-  default = "1.3.3"
+  type        = string
+  default     = "1.3.3"
   description = "Karpenter version"
 }
 
@@ -23,7 +23,7 @@ variable "subnets" {
 }
 
 variable "vpc_id" {
-  type = string
+  type        = string
   description = "VPC ID to deploy the EKS cluster into"
   default     = "vpc-0195ae64d199606ff"
 }

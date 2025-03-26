@@ -22,12 +22,12 @@ resource "helm_release" "karpenter" {
   repository = "oci://public.ecr.aws/karpenter"
   version    = var.karpenter_version
   namespace  = "kube-system"
-  
+
   set {
     name  = "settings.clusterName"
     value = module.eks.cluster_name
   }
-  
+
   set {
     name  = "settings.clusterEndpoint"
     value = module.eks.cluster_endpoint
@@ -42,4 +42,6 @@ resource "helm_release" "karpenter" {
     name  = "settings.replicas"
     value = 1
   }
-} 
+
+  depends_on = [module.eks]
+}

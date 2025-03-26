@@ -1,7 +1,11 @@
-resource "kubernetes_manifest" "node_class" {
-  manifest = yamldecode(file("./karpenter-nodeclass.yaml"))
+resource "kubectl_manifest" "node_class" {
+  yaml_body = templatefile("./templates/karpenter/nodeclass.tpl", {
+    cluster_name = var.cluster_name
+  })
 }
 
-resource "kubernetes_manifest" "node_pool" {
-  manifest = yamldecode(file("./karpenter-nodepool.yaml"))
+resource "kubectl_manifest" "node_pool" {
+  yaml_body = templatefile("./templates/karpenter/nodepool.tpl", {
+    cluster_name = var.cluster_name
+  })
 }
