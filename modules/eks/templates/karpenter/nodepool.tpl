@@ -17,15 +17,12 @@ spec:
         - key: "karpenter.k8s.aws/instance-cpu"
           operator: In
           values: ["2", "4", "8"]
-        - key: "topology.kubernetes.io/zone"
-          operator: In
-          values: ["eu-central-1a", "eu-central-1b"]
         - key: "kubernetes.io/arch"
           operator: In
           values: ["amd64", "arm64"]
         - key: "karpenter.sh/capacity-type"
           operator: In
-          values: ["on-demand"]
+          values: ["on-demand", "spot"]
       nodeClassRef:
         group: karpenter.k8s.aws
         kind: EC2NodeClass

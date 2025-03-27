@@ -3,15 +3,12 @@ terraform {
     aws = {
       source = "hashicorp/aws"
     }
-    kubectl = {
-      source  = "gavinbunney/kubectl"
-      version = ">= 1.19.0"
-    }
+
   }
 }
 
 provider "aws" {
-  region = "eu-central-1"
+  region = var.region
 }
 
 provider "helm" {
@@ -28,18 +25,3 @@ provider "helm" {
   }
 }
 
-provider "kubectl" {
-  apply_retry_count      = 15
-  host                   = module.eks.cluster_endpoint
-  cluster_ca_certificate = base64decode(module.eks.cluster_certificate_authority_data)
-  load_config_file       = false
-
-  exec {
-    api_version = "client.authentication.k8s.io/v1beta1"
-    command     = "/bin/sh"
-    args = [
-      "-c",
-      "aws eks get-token --cluster-name ${var.cluster_name} --output json"
-    ]
-  }
-}

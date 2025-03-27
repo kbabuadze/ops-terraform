@@ -16,7 +16,7 @@ variable "karpenter_version" {
   default     = "1.3.3"
 }
 
-variable "subnets" {
+variable "subnet_ranges" {
   type        = list(string)
   description = "Subnets to deploy the EKS cluster into"
   default     = ["10.0.4.0/24", "10.0.5.0/24"]
@@ -25,4 +25,10 @@ variable "subnets" {
 variable "vpc_id" {
   type        = string
   description = "VPC ID to deploy the EKS cluster into"
+}
+
+variable "region" {
+  type        = string
+  description = "AWS region"
+  default     = "eu-central-1"
 }
