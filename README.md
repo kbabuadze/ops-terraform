@@ -7,7 +7,7 @@ This Terraform project provisions an Amazon Elastic Kubernetes Service (EKS) clu
 Ensure the following tools and configurations are in place before proceeding:
 
 - **AWS Account**: Active AWS account with necessary permissions.
-- **Terraform**: Installed and configured (>= 1.0.0).
+- **Terraform**: Installed and configured (>= v1.5.7).
 - **AWS CLI**: Installed and configured (>= 2.25.2).
 - **kubectl**: Installed (>= 1.32).
 
