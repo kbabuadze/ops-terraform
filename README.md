@@ -55,13 +55,13 @@ cp .tfvars.example .tfvars
 Review the planned changes before applying them:
 
 ```bash
-terraform plan
+terraform init && terraform plan
 ```
 
-Initialize Terraform and apply the configuration:
+Apply the configuration:
 
 ```bash
-terraform init && terraform apply --var-file=.tfvars
+terraform apply --var-file=.tfvars
 ```
 
 ## Resources Provisioned

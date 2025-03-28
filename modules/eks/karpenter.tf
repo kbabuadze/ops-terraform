@@ -39,11 +39,6 @@ resource "helm_release" "karpenter" {
     value = module.eks.cluster_certificate_authority_data
   }
 
-  set {
-    name  = "settings.replicas"
-    value = 1
-  }
-
   depends_on = [module.eks]
 }
 
