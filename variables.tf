@@ -19,13 +19,21 @@ variable "karpenter_version" {
 variable "private_subnet_ranges" {
   type        = list(string)
   description = "Subnets to deploy the EKS cluster into"
-  default     = ["10.0.101.0/24", "10.0.102.0/24"]
+  default     = []
+  validation {
+    condition     = length(var.private_subnet_ranges) < 3
+    error_message = "Public subnet ranges must be provided."
+  }
 }
 
 variable "public_subnet_ranges" {
   type        = list(string)
   description = "Subnets to deploy the EKS cluster into"
-  default     = ["10.0.1.0/24", "10.0.2.0/24"]
+  default     = []
+  validation {
+    condition     = length(var.public_subnet_ranges) < 3
+    error_message = "Public subnet ranges must be provided."
+  }
 }
 
 variable "vpc_id" {

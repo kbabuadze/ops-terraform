@@ -51,6 +51,21 @@ cp .tfvars.example .tfvars
 - Ensure to provide values for `vpc_id` and `private_subnet_ranges`.
 
 ### 4. Apply the Configuration
+VPC ID Must be provided
+
+```
+vpc_id = "<vpc_id>"
+```
+
+Other variables can be ommitted and they will be defaulted to the following: 
+```
+kubernetes_version    = "1.32"
+karpenter_version     = "1.3.3"
+cluster_name          = "ops-eks-cluster"
+region                = "eu-central-1"
+private_subnet_ranges = # Generated from VPC CIDR assuming there are no subnets configured
+public_subnet_ranges  = # Generated from VPC CIDR assuming there are no subnets configured
+```
 
 Review the planned changes before applying them:
 

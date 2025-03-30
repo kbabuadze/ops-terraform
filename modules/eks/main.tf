@@ -3,6 +3,7 @@ data "aws_eks_cluster" "cluster" {
   depends_on = [module.eks]
 }
 
+
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
   version = "20.34.0"
