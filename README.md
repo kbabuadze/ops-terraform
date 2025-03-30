@@ -48,7 +48,7 @@ Copy the example `.tfvars` file and update it with the required values:
 cp .tfvars.example .tfvars
 ```
 
-- Ensure to provide values for `vpc_id` and `subnet_ranges`.
+- Ensure to provide values for `vpc_id` and `private_subnet_ranges`.
 
 ### 4. Apply the Configuration
 

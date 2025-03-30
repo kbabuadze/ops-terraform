@@ -8,8 +8,9 @@ module "eks" {
 }
 
 module "networking" {
-  source        = "./modules/networking"
-  vpc_id        = var.vpc_id
-  subnet_ranges = var.subnet_ranges
-  cluster_name  = var.cluster_name
+  source                = "./modules/networking"
+  vpc_id                = var.vpc_id
+  private_subnet_ranges = var.private_subnet_ranges
+  public_subnet_ranges  = var.public_subnet_ranges
+  cluster_name          = var.cluster_name
 }

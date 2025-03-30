@@ -8,7 +8,12 @@ variable "cluster_name" {
   description = "EKS cluster name"
 }
 
-variable "subnet_ranges" {
+variable "private_subnet_ranges" {
   type        = list(string)
   description = "Subnets to deploy the EKS cluster into"
+}
+
+variable "public_subnet_ranges" {
+  type        = list(string)
+  description = "Subnets to deploy the NAT gateways into"
 }
