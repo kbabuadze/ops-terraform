@@ -20,7 +20,7 @@ provider "kubectl" {
     command     = "/bin/sh"
     args = [
       "-c",
-      "aws eks get-token --cluster-name ${var.cluster_name} --output json"
+      "aws eks get-token --cluster-name ${var.cluster_name}"
     ]
   }
 }

@@ -39,7 +39,7 @@ resource "helm_release" "karpenter" {
     value = module.eks.cluster_certificate_authority_data
   }
 
-  depends_on = [module.eks]
+  depends_on = [module.karpenter]
 }
 
 

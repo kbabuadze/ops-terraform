@@ -39,6 +39,7 @@ variable "public_subnet_ranges" {
 variable "vpc_id" {
   type        = string
   description = "VPC ID to deploy the EKS cluster into"
+  default     = ""
 }
 
 variable "region" {

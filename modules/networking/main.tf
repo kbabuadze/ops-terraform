@@ -88,7 +88,7 @@ resource "aws_subnet" "eks_private_subnets" {
   vpc_id                  = var.vpc_id
   cidr_block              = var.private_subnet_ranges[count.index]
   availability_zone       = data.aws_availability_zones.available.names[count.index]
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = false
   tags = {
     "Name"                   = "eks-subnet-${count.index}",
     "karpenter.sh/discovery" = "${var.cluster_name}"

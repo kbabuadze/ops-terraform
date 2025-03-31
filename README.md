@@ -11,6 +11,12 @@ Ensure the following tools and configurations are in place before proceeding:
 - **AWS CLI**: Installed and configured (>= 2.25.2).
 - **kubectl**: Installed (>= 1.32).
 
+Make sure `spot.amazonaws.com` service role exists for your account.
+If it's not created you can run command below
+```bash
+ aws iam create-service-linked-role --aws-service-name spot.amazonaws.com
+```
+
 ## Getting Started
 
 ### 1. Clone the Repository
